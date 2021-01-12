@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="PlayButtonView">
+        <!--默认进度颜色-->
+        <attr name="color_default" format="color" />
+        <!--进度颜色-->
+        <attr name="color_progress" format="color" />
+        <!--默认状态线宽度-->
+        <attr name="line_default_width" format="dimension" />
+        <!--进度状态线宽度-->
+        <attr name="line_progress_width" format="dimension" />
+    </declare-styleable>
+
+</resources>

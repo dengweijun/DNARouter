@@ -1,0 +1,52 @@
+<resources>
+
+    <style name="ContentTV">
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:lineSpacingExtra">4dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:gravity">center_vertical|right</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textColor">#999999</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColorHint">#aaaaaa</item>
+    </style>
+
+    <style name="ContentET" parent="ContentTV">
+        <item name="android:background">@color/transparent</item>
+        <item name="android:textColor">#666666</item>
+        <item name="android:textColorHint">#aaaaaa</item>
+    </style>
+
+    <style name="ContentET_LEFT" parent="ContentET">
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:paddingLeft">15dp</item>
+    </style>
+
+    <style name="MainScrollView">
+        <item name="android:fillViewport">true</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:overScrollMode">never</item>
+    </style>
+
+    <style name="MainScrollL">
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="MainScrollNoEditL" parent="MainScrollL">
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+    </style>
+
+    <style name="GRID_PICTURE_IV">
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_height">100dp</item>
+        <!--<item name="android:background">@color/bg_grid_picture_color</item>-->
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+</resources>

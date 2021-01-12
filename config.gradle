@@ -1,0 +1,26 @@
+ext {
+    // 定义一些变量，该变量可以被其它gradle文件使用
+
+    // 是否开发模式：true-开发模式下每个模块单独运行调试(application)
+    isDebug = false
+
+    android = [
+            compileSdkVersion: 29,
+            buildToolsVersion: "29.0.3",
+            minSdkVersion    : 19,
+            targetSdkVersion : 29,
+            versionCode      : 1,
+            versionName      : "1.0"
+    ]
+
+    applicationId = [
+            "app"         : "com.ben.dnarouter",
+            "module_main" : "com.ben.module_main",
+            "module_login": "com.ben.module_login"]
+
+    libDesign = 'com.google.android.material:material:1.1.0'
+    libAppcompat = 'androidx.appcompat:appcompat:1.1.0'
+    libConstraintLayout = 'androidx.constraintlayout:constraintlayout:1.1.3'
+    libLMBanners = 'com.allure0:LMBanners:1.0.2'
+    libRecyclerAdatper = 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
+}

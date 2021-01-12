@@ -1,0 +1,30 @@
+1.实现分层：
+    app
+    -> modules_main  (业务组件层：module_main, module_login等等)
+    -> modules_core  (功能组件层)
+    -> modules_base (基础组件层, library, base)
+
+2.ARouter原理
+通过path-class的映射关系，把Activity的class对象保存到Map中，当需要使用时，根据path去取到对应的class，再使用intent跳转。
+
+3.实现ARouter的核心
+    annotationProcessor 注解处理器
+    JavaPoet 代码生成
+
+4.设计ARouter的关键
+    首先要清除映射关系：通过groupName找到某一分组的path-class的映射表，然后通过path去找到class对象。前提是在APP启动时，
+    就要创建好这两张映射表。
+    两个关键的生成类：ARouter$$Group$$main
+                    ARouter$$Root&&app
+
+
+
+
+5.注解处理器+javapoet打造Arouter步骤：
+
+    1.创建java-lib：router_compiler，router_annotation。前者需要依赖后者
+    2.在router_annotation定义一个注解，Router
+    3.在router_compiler中，实现创建我们注解处理器类RouterProcessor，继承AbstractProcessor
+    4.需要注册我们的注解处理器才能正常工作
+    5.在router_compiler的gradle文件中，我们导入这样一个包，这个包是做什么用？帮助我们自动注册处理器
+    6.

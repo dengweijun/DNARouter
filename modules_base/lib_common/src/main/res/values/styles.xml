@@ -1,0 +1,26 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="android:windowBackground">@color/colorPrimaryWindowBg</item>
+        <item name="android:windowAnimationStyle">@style/ActivityTransitions</item>
+        <!--换肤：用来设置全局字体-->
+        <item name="skinTypeface">@string/typeface</item>
+    </style>
+
+    <style name="ActivityTransitions" parent="@android:style/Animation">
+        <item name="android:activityOpenEnterAnimation">@anim/activity_open_enter_slide_in_left
+        </item>
+        <item name="android:activityOpenExitAnimation">@anim/activity_open_exit_slide_out_left
+        </item>
+        <item name="android:activityCloseEnterAnimation">@anim/activity_close_enter_slide_in_right
+        </item>
+        <item name="android:activityCloseExitAnimation">@anim/activity_close_exit_slide_out_right
+        </item>
+    </style>
+
+</resources>

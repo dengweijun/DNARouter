@@ -1,0 +1,20 @@
+plugins {
+    id 'java-library'
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    annotationProcessor 'com.google.auto.service:auto-service:1.0-rc4'
+    compileOnly 'com.google.auto.service:auto-service:1.0-rc4'
+
+    implementation project(':router_annotation')
+    implementation 'com.squareup:javapoet:1.11.1'
+}
+
+sourceCompatibility = "8"
+targetCompatibility = "8"
+
+// java控制台输出中文乱码
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}

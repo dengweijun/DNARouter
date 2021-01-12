@@ -1,0 +1,50 @@
+plugins {
+    id 'com.android.application'
+}
+def cfg = rootProject.ext
+android {
+    compileSdkVersion cfg.android.compileSdkVersion
+    buildToolsVersion cfg.android.buildToolsVersion
+
+    defaultConfig {
+        applicationId cfg.applicationId['app']
+        minSdkVersion cfg.android.minSdkVersion
+        targetSdkVersion cfg.android.targetSdkVersion
+        versionCode cfg.android.versionCode
+        versionName cfg.android.versionName
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    sourceSets {
+        // 在开发模式下 使用不同的代码 以保证编译不报错
+        if (isDebug) {
+            main.java.srcDirs = ['src/main/debug/java']
+        }
+    }
+}
+
+dependencies {
+    annotationProcessor project(':router_compiler')
+    implementation project(':lib_common')
+
+    if (!isDebug) {
+        implementation project(':module_login')
+        implementation project(':module_main')
+    }
+}

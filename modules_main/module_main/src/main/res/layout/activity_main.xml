@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/activity_music_include" />
+
+    <!-- The navigation drawer -->　　　　　　
+    <!-- 左边弹出布局区 -->
+    <include layout="@layout/include_main_menu" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

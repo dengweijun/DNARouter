@@ -1,0 +1,22 @@
+include ':lib_orm'
+include ':module_domain'
+include ':module_login'
+include ':module_main'
+include ':skinsupport'
+include ':router_compiler'
+include ':lib_common'
+include ':lib_arouter'
+include ':router_annotation'
+include ':app'
+rootProject.name = "DNARouter"
+
+// 需要定位module的项目位置，否则无法编译
+project(':router_annotation').projectDir = new File('modules_base/router_annotation')
+project(':lib_arouter').projectDir = new File('modules_base/lib_arouter')
+project(':lib_common').projectDir = new File('modules_base/lib_common')
+project(':router_compiler').projectDir = new File('modules_base/router_compiler')
+project(':lib_orm').projectDir = new File('modules_base/lib_orm')
+project(':skinsupport').projectDir = new File('modules_base/skinsupport')
+project(':module_main').projectDir = new File('modules_main/module_main')
+project(':module_login').projectDir = new File('modules_main/module_login')
+project(':module_domain').projectDir = new File('modules_core/module_domain')

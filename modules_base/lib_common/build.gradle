@@ -1,0 +1,41 @@
+plugins {
+    id 'com.android.library'
+}
+def cfg = rootProject.ext
+android {
+    compileSdkVersion cfg.android.compileSdkVersion
+    buildToolsVersion cfg.android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion cfg.android.minSdkVersion
+        targetSdkVersion cfg.android.targetSdkVersion
+        versionCode cfg.android.versionCode
+        versionName cfg.android.versionName
+
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    api cfg.libAppcompat
+    api cfg.libDesign
+    api cfg.libConstraintLayout
+
+    api project(':lib_arouter')
+    api project(':skinsupport')
+
+    api cfg.libLMBanners
+    api cfg.libRecyclerAdatper
+}
